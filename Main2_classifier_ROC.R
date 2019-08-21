@@ -1,6 +1,6 @@
 ### Obatin the weighted DEGs for classificaiton using ROC
 # set your path
-setwd("your folder path")
+# setwd("your folder path")
 rm(list = ls())
 # load the required packages
 library(caret)
@@ -12,16 +12,16 @@ library(ROCR)
 ### load the required data from "Main1_weighted_DEGs.R"
 
 ### load the data: brca_tumor_new, classes_tumor
-load("ds2_brca_tumor_new.Rdata")
+load("./Data/ds2_brca_tumor_new.Rdata")
 
 ### load the weighted DEGs for classification: subtype_weighted_DEGs_classification
-load("ds2_weighted_DEGs_classification.Rdata")
+load("./Data/ds2_weighted_DEGs_classification.Rdata")
 savepath <- "./classifiers_ROC/"
 ############## Step 2: constuct the binary classification models using manchine learning for each subtype
 ############## Step 2.1: The shared content is as follows,
 split=0.60 # the coefficient for spliting traning and testing set
 methods <- c("nb", "rf", "svmRadial") # four machine learning methods
-repeats_num <- 100 # the repeat number for 5-fold cross-validation
+repeats_num <- 1 # the repeat number for 5-fold cross-validation
 
 ############## Step 2.2: learn the binary classifier for each subtype
 select_pred_subtype <- function(do.this){
@@ -139,3 +139,12 @@ for (ii in subtypes_names){
 ############## Step 3: save the results of the binary classification models for each subtype
 
 cat("The work for binary classifiers learning for all BRCA subtypes is completed!\n")
+
+
+
+
+
+
+
+
+
