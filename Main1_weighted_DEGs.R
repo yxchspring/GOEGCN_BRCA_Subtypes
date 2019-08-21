@@ -1,8 +1,21 @@
 ### Obatin the weighted DEGs for classificaiton and pathway enrichment analysis
 # set your path
 setwd("your folder path")
+# setwd("E:/RstudioProjects/Subtypes/Subtypes_Rcodes")
 rm(list = ls())
 # load the required packages
+### before R version 3.5
+# source("http://bioconductor.org/biocLite.R")
+# biocLite("CancerSubtypes")
+
+###  R version 3.5 or greater
+# # if exists "Rtools is required to build R packages ...", 
+# # please change the mirrors in RStudio: Tools>global options>packages.
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#   install.packages("BiocManager")
+# 
+# BiocManager::install("CancerSubtypes")
+
 library(CancerSubtypes)
 ############## Step 0: folders preparation
 if (file.exists("./classifiers")==FALSE){
@@ -20,13 +33,13 @@ if (file.exists("./ROC_graphs")==FALSE){
 
 ############## Step 1: Load data
 ### load the brca tumor FPKM data
-load("ds1_brca_tumor_fpkm.Rdata")
+load("./Data/ds1_brca_tumor_fpkm.Rdata")
 ### load the processed clinical data
-load("ds1_brca_clinic.Rdata")
+load("./Data/ds1_brca_clinic.Rdata")
 
 ### load the brca tumor Counts data
 # This data has the same samples and genes as the fpkm's
-load("ds1_brca_tumor_counts.Rdata")
+load("./Data/ds1_brca_tumor_counts.Rdata")
 
 cat("The work for conducting the differential expression analysis starts!\n")
 
@@ -114,15 +127,25 @@ names(subtype_weighted_DEGs_pathway) <- subtypes_names
 cat("The work for save results data starts!\n")
 ############## Step 4: save the final results
 ### save the data whose brca_clinic$subtype_BRCA_Subtype_PAM50 are not NA
-save(brca_tumor_new,classes_tumor,file = "ds2_brca_tumor_new.Rdata")
-save(brca_clinic_new,file = "ds2_brca_clinic_new.Rdata")
+save(brca_tumor_new,classes_tumor,file = "./Data/ds2_brca_tumor_new.Rdata")
+save(brca_clinic_new,file = "./Data/ds2_brca_clinic_new.Rdata")
 
 ### save the data of weighted DEGs for classification
-save(subtype_weighted_DEGs_classification,file = "ds2_weighted_DEGs_classification.Rdata")
+save(subtype_weighted_DEGs_classification,file = "./Data/ds2_weighted_DEGs_classification.Rdata")
 
 ### save the data of weighted DEGs for pathway enrichment analysis
-save(subtype_weighted_DEGs_pathway,file = "ds2_weighted_DEGs_pathway.Rdata")
+save(subtype_weighted_DEGs_pathway,file = "./Data/ds2_weighted_DEGs_pathway.Rdata")
 cat("The work is completed!\n")
+
+
+
+
+
+
+
+
+
+
 
 
 
