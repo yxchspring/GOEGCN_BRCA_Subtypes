@@ -21,7 +21,7 @@ savepath <- "./classifiers_ROC/"
 ############## Step 2.1: The shared content is as follows,
 split=0.60 # the coefficient for spliting traning and testing set
 methods <- c("nb", "rf", "svmRadial") # four machine learning methods
-repeats_num <- 1 # the repeat number for 5-fold cross-validation
+repeats_num <- 100 # the repeat number for 5-fold cross-validation
 
 ############## Step 2.2: learn the binary classifier for each subtype
 select_pred_subtype <- function(do.this){
