@@ -17,7 +17,7 @@ ref_brca_normal_fpkm.Rdata: The BRCA normal FPKM data with same genes as 3), the
 
 ###################### 2. Main functions #################### 
 
-There are 5 main functions and the corresponding descriptions are as follows,
+There are 6 main functions and the corresponding descriptions are as follows,
 
 1. Main1_weighted_DEGs.R 
 
