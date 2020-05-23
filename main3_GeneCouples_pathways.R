@@ -280,7 +280,7 @@ GeneCouples_pathways <- function(Data, WDEGs,classes_tumor,subtype_ii, pvalueCut
 
   cat("The pathway analysis results for experi is saved!\n")
   
-  ###################### Step 5: save the Control, Experiment, Common groups of enriched pathways using PEGCN with weighted DEGs
+  ###################### Step 5: save the Control, Experiment, Common groups of enriched pathways using GOEGCN with weighted DEGs
   ### get the shared GO terms ID
   experi_ID <- Genecouples_pathways_experi_order$ID
   ctrl_ID <- Genecouples_pathways_ctrl_order$ID
@@ -295,7 +295,7 @@ GeneCouples_pathways <- function(Data, WDEGs,classes_tumor,subtype_ii, pvalueCut
   
   # for the shared ones:
   Genecouples_pathway_shared <- Genecouples_pathways_experi_order[shared_ID,]
-  cat(paste0("The pathway analysis results using PEGCN with weighted DEGS for ",subtype_ii, " is completed!\n"))
+  cat(paste0("The pathway analysis results using GOEGCN with weighted DEGS for ",subtype_ii, " is completed!\n"))
   return(list(Control=Genecouples_pathway_ctrl_unique,
               Experiment=Genecouples_pathway_experi_unique,
               Common=Genecouples_pathway_shared))
