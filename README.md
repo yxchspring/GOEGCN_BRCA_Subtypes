@@ -31,12 +31,17 @@ This function is adopted to conduct the BRCA subtypes classification using weigh
 
 This function is similar with the "Main2_classifier.R", the difference is the "ROC" metric is adopted when training the model. This function can plot the corresponding ROC curves and the ROC curves for each subtype are saved at directory "ROC_graphs".
 
-4. main3_GeneCouples_pathways.R 
+4. Main2_classifier_ROC_Multiple.R
+
+This function is similar with the "Main2_classifier_ROC.R". This function can plot the multiple ROC curves in one figure and the ROC curves including different machine learning approaches for each subtype are saved at directory "ROC_graphs".
+
+
+5. main3_GeneCouples_pathways.R 
 
 This is the subfunction which is called by  Main3_GOEGCN.R. This function is used to conduct the GO enrichment analysis using GOEGCN with weighted DEGs (for GO enrichment analysis)
 
 
-5. Main3_GOEGCN.R 
+6. Main3_GOEGCN.R 
 
 This function is used to conduct the GO enrichment analysis using GOEGCN with weighted DEG, and the save the corresponding enriched GO terms. The results for each subtype is saved into Excel file and the list results are saved into Rdata file.
 
