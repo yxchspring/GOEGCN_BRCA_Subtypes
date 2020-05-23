@@ -1,9 +1,8 @@
 # GOEGCN_BRCA_Subtypes
-#################################################### Paper: RNA-Seq-based breast cancer subtype classification using machine learning approaches
-
-#################################################### This proceduce is provided by Xiangchun Yu Date: August 21, 2019 Email: yxchspring0209@foxmail.com
-
-###################### 1. Data ############################## Please extract the Data compressed file to this "Data" folder.
+#### Paper: RNA-Seq-based breast cancer subtype classification using machine learning approaches
+#### This proceduce is provided by Xiangchun Yu Date: August 21, 2019
+###################### 1. Data ############################## 
+Please extract the Data compressed file to this "Data" folder.
 
 ds1_brca_clinic.Rdata: The clinic data of BRCA
 
